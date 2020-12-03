@@ -7,8 +7,11 @@ from cpython cimport PyObject, ref, exc, array
 from libc.stdint cimport *
 from libc.stdlib cimport malloc, realloc, free
 
-from c_rgw cimport *
-cimport rados
+IF BUILD_DOC:
+    include "mock_rgw.pxi"
+ELSE:
+    from c_rgw cimport *
+    cimport rados
 
 from collections import namedtuple
 from datetime import datetime
