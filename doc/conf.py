@@ -91,10 +91,6 @@ else:
 
 build_with_rtd = os.environ.get('READTHEDOCS') == 'True'
 
-if build_with_rtd:
-    exclude_patterns += ['**/api/*',
-                         '**/api.rst']
-
 sys.path.insert(0, os.path.abspath('_ext'))
 
 extensions = [
